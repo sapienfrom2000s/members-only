@@ -1,8 +1,5 @@
 <%= link_to "New Post", new_post_path %>
 
 <% @posts.each do |post| %>
-	<h2><%= post.username %></h2>
-	<h3><%= post.title %></h3>
-	<p><%= post.body %></p>
-	<hr>
+	<%= render "post" %>
 <% end %>
