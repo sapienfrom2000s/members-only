@@ -1,5 +1,9 @@
 <h2>New Post</h2>
 
+<% if flash[:error] %>
+<p><%= flash[:error] %></p>
+<% end %>
+
 <%= form_with model: @post,url: "/posts", scope: :post do |form| %>
 	<p><%= form.label :title, "Title" %><br>
 	<%= form.text_field :title, size: 31, placeholder: "Write an apt title" %></p>

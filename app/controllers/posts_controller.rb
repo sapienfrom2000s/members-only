@@ -9,7 +9,7 @@ class PostsController < ApplicationController
         	flash[:success] = "You successfully created the post"
         	redirect_to post_path(@post.id) # go to show page for @post
       	else
-        # code to set up error message
+        	flash.now[:error] = "Unable to create post"
         	render :new, status: :unprocessable_entity
       	end
 	end
