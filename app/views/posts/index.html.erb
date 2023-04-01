@@ -1,7 +1,5 @@
 <%= link_to "New Post", new_post_path %>
-<% if flash[:error] %>
-<p><%= flash[:error] %></p>
-<% end %>
+
 <% @posts.each do |post| %>
 	<%= render "post" %>
 <% end %>

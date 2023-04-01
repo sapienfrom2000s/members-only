@@ -1,7 +1,7 @@
 <h2>New Post</h2>
 
 <% if flash[:error] %>
-<p><%= flash[:error] %></p>
+<strong><%= flash[:error] %></strong>
 <% end %>
 
 <%= form_with model: @post,url: "/posts", scope: :post do |form| %>
