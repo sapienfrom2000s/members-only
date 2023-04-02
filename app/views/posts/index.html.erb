@@ -1,5 +1,8 @@
-<%= link_to "New Post", new_post_path %>
+<%= render "welcome_message", username: current_user.username %><br>
+
+<%= link_to "New Post", new_post_path %> <br>
+<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %><br>
 
 <% @posts.each do |post| %>
-	<%= render "post" %>
+	<%= render "post", post: post %>
 <% end %>

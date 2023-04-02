@@ -1,4 +1,7 @@
+<%= render "welcome_message", username: current_user.username %><br>
+<%= link_to "Home", posts_path %>
+
 <% if flash[:success] %>
 <p><%= flash[:success] %></p>
 <% end %>
-render "post"
+<%= render "post", :post=> @post %>

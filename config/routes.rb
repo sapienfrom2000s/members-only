@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   # Defines the root path route ("/")
   get '/posts' => "posts#index", :as => :user_root
+  # get 'users/sign_out' => "posts#index"
+  root "posts#index"
 end

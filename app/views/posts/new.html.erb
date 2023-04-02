@@ -9,5 +9,6 @@
 	<%= form.text_field :title, size: 31, placeholder: "Write an apt title" %></p>
 	<p><%= form.label :body, "Body" %><br>
 	<%= text_area(:post, :body, cols: 40, rows: 20, placeholder: "Write your post here") %></p>
+	<%= form.hidden_field :user_id, value: current_user.id %>
 	<p><%= form.submit :Submit %></p>
 <% end %>
