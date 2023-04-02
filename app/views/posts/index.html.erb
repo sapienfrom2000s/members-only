@@ -3,7 +3,9 @@
 	<%= link_to "New Post", new_post_path %> <br>
 	<%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete } %><br>
 <% else %>
-	Welcome, <strong>how are you!!</strong>
+	Welcome, <strong>how are you!!</strong><br>
+	<%= link_to "Sign Up", new_user_registration_path  %><br>
+		<%= link_to "Login", user_session_path  %>
 <% end %>
 
 <% @posts.each do |post| %>
