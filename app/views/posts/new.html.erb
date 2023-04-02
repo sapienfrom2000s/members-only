@@ -4,11 +4,10 @@
 <strong><%= flash[:error] %></strong>
 <% end %>
 
-<%= form_with model: @post,url: "/posts", scope: :post do |form| %>
+<%= form_with model: @post do |form| %>
 	<p><%= form.label :title, "Title" %><br>
 	<%= form.text_field :title, size: 31, placeholder: "Write an apt title" %></p>
 	<p><%= form.label :body, "Body" %><br>
-	<%= text_area(:post, :body, cols: 40, rows: 20, placeholder: "Write your post here") %></p>
-	<%= form.hidden_field :user_id, value: current_user.id %>
+	<%= form.text_area :body, size: "40x20" %></p>
 	<p><%= form.submit :Submit %></p>
 <% end %>

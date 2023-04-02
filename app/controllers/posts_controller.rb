@@ -8,11 +8,16 @@ class PostsController < ApplicationController
 		@posts = Post.all
 	end
 
+	def new
+		@post = Post.new
+	end
+
 	def show
 		@post = Post.find(params[:id])
 	end
 
 	def create
+		params[:post][:user_id] = current_user.id
 		@post = Post.new(allow_params)
 		if @post.save
         	flash[:success] = "You successfully created the post"
