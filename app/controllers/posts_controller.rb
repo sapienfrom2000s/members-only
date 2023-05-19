@@ -17,8 +17,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		params[:post][:user_id] = current_user.id
-		@post = Post.new(allow_params)
+		@post = current_user.posts.build(allow_params)
 		if @post.save
         	flash[:success] = "You successfully created the post"
         	redirect_to post_path(@post) # go to show page for @post
@@ -31,6 +30,6 @@ class PostsController < ApplicationController
 	private
 
 	def allow_params
-		params.require(:post).permit(:title, :body, :user_id)
+		params.require(:post).permit(:title, :body)
 	end
 end
